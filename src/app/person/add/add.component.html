@@ -1,0 +1,32 @@
+<p>create works!</p>
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="col">
+      <h3>Add Person</h3>
+    </div>
+    <div class="col text-right">
+      <a routerLink="'/person'" class="btn btn-secondary btn-sm">Back To Person List</a>
+    </div>
+  </div>
+  <br />
+  <form [formGroup]="createForm" (ngSubmit)="onSubmit(createForm)">
+
+    <div class="form-group">
+      <label for="LastName">Last Name:</label>
+      <input formControlName="LastName" type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="FirstName">First Name:</label>
+      <input formControlName="FirstName" type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="BirthDate">Birth Date:</label>
+      <input formControlName="BirthDate" type="text" class="form-control" />
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="!createForm.valid">Create</button>
+  </form>
+</div>

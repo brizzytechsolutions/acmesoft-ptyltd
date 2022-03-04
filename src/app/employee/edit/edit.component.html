@@ -1,0 +1,33 @@
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="col">
+      <h3>Update Employee</h3>
+    </div>
+    <div class="col text-right">
+      <a routerLink="/employee" class="btn btn-secondary btn-sm">Back To Employee List</a>
+    </div>
+  </div>
+  <br />
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm)">
+
+    <input formControlName="EmployeeId" type="hidden" />
+
+    <div class="form-group">
+      <label for="EmployeeNum">Employee Number:</label>
+      <input formControlName="EmployeeNum" type="number" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="name">Employee Date:</label>
+      <input formControlName="EmployeeDate" type="date" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="appearances">Terminated Date:</label>
+      <input formControlName="TerminatedDate"  type="date" class="form-control" />
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="!editForm.valid">Update</button>
+  </form>
+</div>
